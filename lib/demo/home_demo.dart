@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../model/post.dart';
 
 class HomeDemo extends StatelessWidget {
+ 
   Widget _listItemBuilder(BuildContext context, int index) {
     return Container(
       color: Colors.white,
@@ -42,17 +43,3 @@ class HomeDemo extends StatelessWidget {
   }
 }
 
-class HelloDemo extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: Container(
-        child: Text(
-          'Hello World',
-          style: TextStyle(
-              fontSize: 40, fontWeight: FontWeight.bold, color: Colors.brown),
-        ),
-      ),
-    );
-  }
-}
