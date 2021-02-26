@@ -8,6 +8,7 @@ import 'package:flutter/material.dart';
 import 'drawer_demo.dart';
 import 'bottomNavigationBar_demo.dart';
 import 'listview_demo.dart';
+import 'basic_demo.dart';
 
 class HomeDemo extends StatelessWidget {
   @override
@@ -21,7 +22,7 @@ class HomeDemo extends StatelessWidget {
         body: TabBarView(
           children: [
             ListViewDemo(),
-            Icon(Icons.dangerous, size: 128, color: Colors.black12),
+            BasicDemo(),
             Icon(Icons.east, size: 128, color: Colors.black12),
           ],
         ),
