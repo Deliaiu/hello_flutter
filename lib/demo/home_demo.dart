@@ -9,6 +9,7 @@ import 'drawer_demo.dart';
 import 'bottomNavigationBar_demo.dart';
 import 'listview_demo.dart';
 import 'basic_demo.dart';
+import 'layout_demo.dart';
 
 class HomeDemo extends StatelessWidget {
   @override
@@ -23,7 +24,7 @@ class HomeDemo extends StatelessWidget {
           children: [
             ListViewDemo(),
             BasicDemo(),
-            Icon(Icons.east, size: 128, color: Colors.black12),
+            LayoutDemo(),
           ],
         ),
         //按钮
