@@ -10,7 +10,8 @@ import 'bottomNavigationBar_demo.dart';
 import 'listview_demo.dart';
 import 'basic_demo.dart';
 import 'layout_demo.dart';
-import 'view_demo.dart';
+// import 'view_demo.dart';
+import 'sliver_demo.dart';
 
 class HomeDemo extends StatelessWidget {
   @override
@@ -26,7 +27,8 @@ class HomeDemo extends StatelessWidget {
             ListViewDemo(),
             BasicDemo(),
             LayoutDemo(),
-ViewDemo(),
+            // ViewDemo(),
+            SliverDemo(),
           ],
         ),
         //按钮
