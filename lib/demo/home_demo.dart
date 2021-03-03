@@ -10,13 +10,14 @@ import 'bottomNavigationBar_demo.dart';
 import 'listview_demo.dart';
 import 'basic_demo.dart';
 import 'layout_demo.dart';
+import 'view_demo.dart';
 
 class HomeDemo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
       //标签数量
-      length: 3,
+      length: 4,
       child: Scaffold(
         backgroundColor: Colors.grey[100],
         //页面
@@ -25,6 +26,7 @@ class HomeDemo extends StatelessWidget {
             ListViewDemo(),
             BasicDemo(),
             LayoutDemo(),
+ViewDemo(),
           ],
         ),
         //按钮
@@ -70,9 +72,10 @@ class HomeDemo extends StatelessWidget {
             indicatorWeight: 1.0,
             //标题栏按钮
             tabs: [
-              Tab(icon: Icon(Icons.local_activity)),
-              Tab(icon: Icon(Icons.local_library)),
-              Tab(icon: Icon(Icons.local_cafe)),
+              Tab(icon: Icon(Icons.local_activity), text: 'activity'),
+              Tab(icon: Icon(Icons.local_library), text: 'library'),
+              Tab(icon: Icon(Icons.local_cafe), text: 'cafe'),
+              Tab(icon: Icon(Icons.access_alarms_sharp), text: 'alarms')
             ],
           ),
         ),
