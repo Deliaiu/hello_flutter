@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'demo/home_demo.dart';
+import 'demo/navigator_demo.dart';
 
 void main() => runApp(MyApp());
 
@@ -11,7 +12,14 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false, //是否显示右上角debug
       title: 'Material App',
       //自定义部件
-      home: HomeDemo(),
+      // home: HomeDemo(),
+      // home: NavigatorDemo(),
+      initialRoute: '/',
+      routes: {
+        '/':(context) => HomeDemo(),
+        '/about': (context) => MyPage(title: 'About'),
+      },
+
       //主题
       theme: ThemeData(
         //主题颜色
@@ -19,7 +27,7 @@ class MyApp extends StatelessWidget {
         //点按高亮颜色
         highlightColor: Color.fromRGBO(255, 255, 255, 0.3),
         //水波纹颜色
-        splashColor: Colors.white70 ,
+        splashColor: Colors.white70,
       ),
     );
   }

@@ -1,27 +1,55 @@
 import 'package:flutter/material.dart';
+import 'package:hello_flutter/demo/post_show.dart';
 import '../model/post.dart';
 
 class ListViewDemo extends StatelessWidget {
-
   Widget _listItemBuilder(BuildContext context, int index) {
     return Container(
       color: Colors.white,
       margin: EdgeInsets.all(8.0),
-      child: Column( //竖向分布小控件
+      child: Stack(
         children: [
-          Image.network(posts[index].imageUrl),
-          SizedBox(
-            height: 16.0,
-          ), //下方留有空間
-          Text(
-            posts[index].title,
-            style: Theme.of(context).textTheme.headline6,
+          Column(
+            //竖向分布小控件
+            children: [
+              AspectRatio(
+                aspectRatio: 16 / 9,
+                child: Image.network(
+                  posts[index].imageUrl,
+                  fit: BoxFit.cover,
+                ),
+              ),
+              SizedBox(
+                height: 16.0,
+              ), //下方留有空間
+              Text(
+                posts[index].title,
+                style: Theme.of(context).textTheme.headline6,
+              ),
+              Text(
+                posts[index].author,
+                style: Theme.of(context).textTheme.subtitle1,
+              ),
+              SizedBox(
+                height: 16.0,
+              )
+            ],
           ),
-          Text(
-            posts[index].author,
-            style: Theme.of(context).textTheme.subtitle1,
-          ),
-          SizedBox(height: 16.0,)
+          Positioned.fill(
+            child: Material(
+              color: Colors.transparent,
+              //溅墨
+              child: InkWell(
+                splashColor: Colors.white.withOpacity(0.3),
+                highlightColor: Colors.white.withOpacity(0.1),
+                onTap: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(builder: (context) => PostShow(post: posts[index]))
+                  );
+                },
+              ),
+            ),
+          )
         ],
       ),
     );
@@ -30,8 +58,8 @@ class ListViewDemo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
-          itemCount: posts.length,
-          itemBuilder: _listItemBuilder,
-        );
+      itemCount: posts.length,
+      itemBuilder: _listItemBuilder,
+    );
   }
 }
